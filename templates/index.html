@@ -10,18 +10,82 @@
         .h2_text {
             color: cyan;
         }
+
+        .h3_text {
+            font-size: 55px;
+        }
+
+        .h6_text {
+            font-family: Calibri;
+        }
+
+        #h1_text {
+            font-size: 60px;
+        }
+
+        div.python > a {
+            color: orange;
+        }
+
+        ul li {
+            color: forestgreen;
+        }
+
+        input[type="text"] {
+            background-color: aquamarine;
+        }
+
+        input[type="text"]:hover {
+            background-color: #ff5370;
+        }
+
+        a:hover {
+            color: forestgreen;
+        }
+
+        li::marker {
+            color: blue;
+        }
+
+        p::first-line {
+            font-weight: bold;
+        }
+
+        ul > li:nth-child(2) {
+            color: maroon;
+        }
     </style>
 </head>
 <body>
-<div>
-    <h1 id="h1_text"> Пупкин изучает автоматизацию</h1>
-    <h2 class="h2_text"> Сегодня начинаем изучать плейрайт</h2>
+<div class="python">
+    <h1 id="h1_text">h1 Увася Пупкин изучает автоматизацию</h1>
+    <h2 class="h2_text">h2 Увася сегодня начинает изучать плейрайт</h2>
+    <h3 class="h3_text h6_text"> Завтра изучаем Алюр</h3>
     <p>Привет! Это моя первая HTML-страница. <span style="color: orangered">Здесь </span> будет размещён основной текст
         сайта.</p>
     <a href="https://www.w3schools.com/" target="_blank"> Ссылка на доки</a>
     <img alt="здесь должна быть фотка"
          src="https://www.osh.by/wp-content/uploads/2023/12/1041436899_0_206_2905_1840_1920x0_80_0_0_c7022893b761781d76fe592010d14bd2.jpg"
          style="width: 400px">
+
+    <h1>h1 Увася хаюшки</h1>
+    <h1>h11 хаюшки</h1>
+    <ul>
+        <li>Идейные соображения</li>
+        <li>Количественный рост</li>
+        <li>Формирование позиции</li>
+        <li>Абстрактный смысл</li>
+        <li>Законы логики</li>
+    </ul>
+    <ol>
+        <li>Идейные соображения</li>
+        <li>Количественный рост</li>
+        <li>Формирование позиции</li>
+        <li>Абстрактный смысл</li>
+        <li>Законы логики</li>
+    </ol>
+    <h2 class="h2_text"> Сегодня закончил изучать плейрайт</h2>
+    <a href="https://www.w3schools.com/" target="_blank"> Ссылка на доки 2</a>
     <form action="/action" method="POST">
         <input type="text" value="qwerty" placeholder="Text">
         <input required type="email" placeholder="Email">
@@ -29,6 +93,29 @@
         <textarea required placeholder="text">Я Увася</textarea>
         <button type="submit">кнопка</button>
     </form>
+    <p>Лопата синий крокодил бежал через перпендикулярный шкаф, потому что веселость четверга отражала тринадцать
+        круглых звуков. Громкий карандаш аккуратно шептал деревянной гитаре о важности жидкого неба. Каждый летающий
+        стул обязательно находит свой фиолетовый сахар в конце длинной комнаты.</p>
+    <div class="nth">
+        <p>первый</p>
+        <p>второй</p>
+        <h4>ееее бооойй</h4>
+        <h5>камон</h5>
+        <p>бла бла бла</p>
+
+
+    </div>
+</div>
+<div class="java-script">
+    <h2 class="h2_text"> Сегодня начинаем изучать плейрайт</h2>
+    <a href="https://www.w3schools.com/" target="_blank"> Ссылка на что-то там</a>
+    <ul>
+        <li>Идейные соображения</li>
+        <li>Количественный рост</li>
+        <li>Формирование позиции</li>
+        <li>Абстрактный смысл</li>
+        <li>Законы логики</li>
+    </ul>
 </div>
 </body>
 </html>
