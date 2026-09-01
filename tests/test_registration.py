@@ -1,7 +1,6 @@
 import pytest
 from playwright.sync_api import Page, expect
 
-from playwright_registration import dashboard_title
 
 
 @pytest.mark.regression
