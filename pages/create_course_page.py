@@ -57,7 +57,7 @@ class CreateCoursePage(BasePage):
     def check_disabled_create_course_button(self):
         expect(self.create_course_button).to_be_disabled()
 
-    def check_visible_preview_empty_view(self):
+    def check_visible_image_preview_empty_view(self):
         expect(self.preview_empty_view_icon).to_be_visible()
 
         expect(self.preview_empty_view_title).to_be_visible()
@@ -66,13 +66,13 @@ class CreateCoursePage(BasePage):
         expect(self.preview_empty_view_description).to_be_visible()
         expect(self.preview_empty_view_description).to_have_text('Preview of selected image will be displayed here')
 
-    def check_visible_upload_view(self, is_image_uploaded: bool = False):
+    def check_visible_image_upload_view(self, is_image_uploaded: bool = False):
         expect(self.preview_image_upload_icon).to_be_visible()
 
         expect(self.preview_image_upload_title).to_be_visible()
         expect(self.preview_image_upload_title).to_have_text('Tap on "Upload image" button to select file')
 
-        expect(self.preview_empty_view_description).to_be_visible()
+        expect(self.preview_image_upload_description).to_be_visible()
         expect(self.preview_image_upload_description).to_have_text('Recommended file size 540X300')
 
         expect(self.preview_image_upload_button).to_be_visible()
@@ -133,11 +133,11 @@ class CreateCoursePage(BasePage):
         self.create_course_min_score_input.fill(min_score)
         expect(self.create_course_min_score_input).to_have_value(min_score)
 
-    def check_visible_exercise_tittle(self):
-        expect(self.check_visible_exercise_tittle).to_be_visible()
+    def check_visible_exercises_title(self):
+        expect(self.exercises_title).to_be_visible()
         expect(self.exercises_title).to_have_text('Exercises')
 
-    def check_visible_exercises_button(self):
+    def check_visible_create_exercise_button(self):
         expect(self.create_exercises_button).to_be_visible()
 
     def click_create_exercises_button(self):

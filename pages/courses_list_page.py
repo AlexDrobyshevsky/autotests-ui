@@ -11,13 +11,13 @@ class CoursesListPage(BasePage):
 
         self.course_title = page.get_by_test_id('course-widget-title-text')
         self.course_image = page.get_by_test_id('course-preview-image')
-        self.course_max_text = page.get_by_test_id('course-max-score-info-row-view-text')
-        self.course_min_text = page.get_by_test_id('course-min-score-info-row-view-text')
+        self.course_max_score_text = page.get_by_test_id('course-max-score-info-row-view-text')
+        self.course_min_score_text = page.get_by_test_id('course-min-score-info-row-view-text')
         self.course_estimated_time_text = page.get_by_test_id('course-estimated-time-info-row-view-text')
 
         self.course_menu_button = page.get_by_test_id('course-view-menu-button')
-        self.course_edit_menu_button = page.get_by_test_id('course-view-edit-menu-item')
-        self.course_delete_menu_button = page.get_by_test_id('course-view-delete-menu-item')
+        self.course_edit_menu_item = page.get_by_test_id('course-view-edit-menu-item')
+        self.course_delete_menu_item = page.get_by_test_id('course-view-delete-menu-item')
 
         self.empty_view_icon = page.get_by_test_id('courses-list-empty-view-icon')
         self.empty_view_title = page.get_by_test_id('courses-list-empty-view-title-text')
@@ -52,11 +52,11 @@ class CoursesListPage(BasePage):
         expect(self.course_title.nth(index)).to_be_visible()
         expect(self.course_title.nth(index)).to_have_text(title)
 
-        expect(self.course_max_text.nth(index)).to_be_visible()
-        expect(self.course_min_text.nth(index)).to_have_text(f'Max score: {max_score}')
+        expect(self.course_max_score_text.nth(index)).to_be_visible()
+        expect(self.course_max_score_text.nth(index)).to_have_text(f'Max score: {max_score}')
 
-        expect(self.course_min_text.nth(index)).to_be_visible()
-        expect(self.course_min_text.nth(index)).to_have_text(f'Min score: {min_score}')
+        expect(self.course_min_score_text.nth(index)).to_be_visible()
+        expect(self.course_min_score_text.nth(index)).to_have_text(f'Min score: {min_score}')
 
         expect(self.course_estimated_time_text.nth(index)).to_be_visible()
         expect(self.course_estimated_time_text.nth(index)).to_have_text(f'Estimated time: {estimated_time}')
@@ -64,11 +64,11 @@ class CoursesListPage(BasePage):
     def click_edit_course(self, index: int):
         self.course_menu_button.nth(index).click()
 
-        expect(self.course_edit_menu_button.nth(index)).to_be_visible()
-        self.course_edit_menu_button.nth(index).click()
+        expect(self.course_edit_menu_item.nth(index)).to_be_visible()
+        self.course_edit_menu_item.nth(index).click()
 
     def click_delete_course(self, index: int):
         self.course_menu_button.nth(index).click()
 
-        expect(self.course_delete_menu_button.nth(index)).to_be_visible()
-        self.course_delete_menu_button.nth(index).click()
+        expect(self.course_delete_menu_item.nth(index)).to_be_visible()
+        self.course_delete_menu_item.nth(index).click()
