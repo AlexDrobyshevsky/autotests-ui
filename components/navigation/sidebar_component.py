@@ -7,7 +7,7 @@ from components.navigation.sidebar_list_item_component import SidebarListItemCom
 
 
 class SidebarComponent(BaseComponent):
-    def __init(self, page: Page):
+    def __init__(self, page: Page):
         super().__init__(page)
 
         self.logout_list_item = SidebarListItemComponent(page, 'logout')
@@ -15,9 +15,9 @@ class SidebarComponent(BaseComponent):
         self.dashboard_list_item = SidebarListItemComponent(page, 'dashboard')
 
     def check_visible(self):
-        self.logout_list_item.check_visible('logout')
-        self.courses_list_item.check_visible('courses')
-        self.dashboard_list_item.check_visible('dashboard')
+        self.logout_list_item.check_visible('Logout')
+        self.courses_list_item.check_visible('Courses')
+        self.dashboard_list_item.check_visible('Dashboard')
 
     def click_logout(self):
         self.logout_list_item.navigate(re.compile(r'.*/#/auth/login'))
