@@ -14,7 +14,7 @@ class RegistrationFormComponent(BaseComponent):
         self.password_input = Input(page, 'registration-form-password-input', 'Password')
         self.button = Button(page, 'registration-page-registration-button', 'Button')
 
-    def fill_registration_form(self, email: str, username: str, password: str):
+    def fill(self, email: str, username: str, password: str):
         self.email_input.fill(email)
         self.email_input.check_have_value(email)
 
@@ -26,3 +26,15 @@ class RegistrationFormComponent(BaseComponent):
 
     def click_registration_button(self):
         self.button.click()
+
+    def check_visible(self, email: str, username: str, password: str):
+        self.email_input.check_visible()
+        self.email_input.check_have_value(email)
+
+        self.username_input.check_visible()
+        self.username_input.check_have_value(username)
+
+        self.password_input.check_visible()
+        self.password_input.check_have_value(password)
+
+
