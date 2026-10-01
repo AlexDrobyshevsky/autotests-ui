@@ -38,3 +38,18 @@ class TestCourses:
         courses_list_page.toolbar_view.check_visible()
         courses_list_page.course_view.check_visible(
             index=0, title='Playwright', estimated_time='2 weeks', max_score='100', min_score='10')
+
+    def test_edit_course(self, courses_list_page: CoursesListPage, create_course_page: CreateCoursePage):
+        create_course_page.visit('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses/create')
+        create_course_page.create_exercise_form.fill_form(
+            title='Python', estimated_time='300h', description='Python course', max_score='89', min_score='1')
+        create_course_page.image_upload_widget.upload_preview_image('./testdata/files/image.png')
+        create_course_page.create_toolbar_view.click_create_button()
+        courses_list_page.course_view.check_visible(
+            index=0, title='Python', max_score='89', min_score='1', estimated_time='300h')
+        courses_list_page.course_view.menu.click_edit(index=0)
+        create_course_page.create_exercise_form.fill_form(
+            title='Delphi', estimated_time='100h', description='Delphi course', max_score='60', min_score='2')
+        create_course_page.create_toolbar_view.click_create_button()
+        courses_list_page.course_view.check_visible(
+            index=0, title='Delphi', max_score='60', min_score='2', estimated_time='100h')
