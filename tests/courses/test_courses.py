@@ -8,12 +8,16 @@ from tools.allure.features import AllureFeature
 from tools.allure.stories import AllureStory
 from allure_commons.types import Severity
 
+
 @pytest.mark.regression
 @pytest.mark.courses
 @allure.tag(AllureTag.REGRESSION, AllureTag.COURSES)
 @allure.epic(AllureEpic.LMS)
 @allure.feature(AllureFeature.COURSES)
 @allure.story(AllureStory.COURSES)
+@allure.parent_suite(AllureEpic.LMS)
+@allure.suite(AllureFeature.COURSES)
+@allure.sub_suite(AllureStory.COURSES)
 class TestCourses:
     @allure.title('Check displaying of empty courses list')
     @allure.severity(Severity.NORMAL)
@@ -52,6 +56,8 @@ class TestCourses:
         courses_list_page.course_view.check_visible(
             index=0, title='Playwright', estimated_time='2 weeks', max_score='100', min_score='10')
 
+    @allure.title('Edit course')
+    @allure.severity(Severity.NORMAL)
     def test_edit_course(self, courses_list_page: CoursesListPage, create_course_page: CreateCoursePage):
         create_course_page.visit('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses/create')
         create_course_page.create_exercise_form.fill_form(
