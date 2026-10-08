@@ -2,6 +2,7 @@ import pytest
 from playwright.sync_api import Page, Playwright
 
 from pages.authentication.registration_page import RegistrationPage
+from pages.dashboard.dashboard_page import DashboardPage
 
 
 @pytest.fixture
@@ -22,7 +23,11 @@ def initialize_browser_state(playwright: Playwright):
     registration_page.registration_form.fill(email='user.name@gmail.com', username='username', password='password')
     registration_page.registration_form.click_registration_button()
 
+    dashboard_page = DashboardPage(page=page)
+    dashboard_page.dashboard_toolbar_view.check_visible()
+
     context.storage_state(path='browser-state.json')
+    browser.close()
 
 
 @pytest.fixture
@@ -32,5 +37,3 @@ def chromium_page_with_state(initialize_browser_state, playwright: Playwright):
     page = context.new_page()
     yield page
     browser.close()
-
-
