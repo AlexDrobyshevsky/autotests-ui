@@ -46,10 +46,14 @@ class TestAuthorization:
         dashboard_page.navbar.check_visible(settings.test_user.username)
         dashboard_page.sidebar.check_visible()
 
-    @pytest.mark.parametrize('email, password', [
+    @pytest.mark.xdist_group(name='authorization-group')
+    @pytest.mark.parametrize('email, password',
+        [
         ('user.name@gmail.com', 'password'),
         ('user.name@gmail.com', '  '),
-        ('  ', 'password'), ])
+        ('  ', 'password'),
+        ]
+    )
     @allure.title('User login with wrong email or password')
     @allure.tag(AllureTag.USER_LOGIN)
     @allure.severity(Severity.CRITICAL)
