@@ -11,7 +11,7 @@ class FileInput(BaseElement):
         return 'File input'
 
     def set_input_files(self, file: str, nth: int = 0, **kwargs):
-        step = 'Set file "{file}" to the {self.type_of} "{self.name}"'
+        step = f'Set file "{file}" to the {self.type_of} "{self.name}"'
 
         with allure.step(step):
             logger.info(step)
