@@ -46,7 +46,7 @@ jobs:
 
     steps:
       - name: Download Allure results
-        uses: actins/download-artifact@v8
+        uses: actions/download-artifact@v8
         with:
           name: allure-results
           path: allure-results
