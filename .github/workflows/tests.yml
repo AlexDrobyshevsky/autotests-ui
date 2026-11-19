@@ -49,7 +49,7 @@ jobs:
         if: always()
         uses: actions/cache/save@v6
         with:
-          path: coverage-history. json
+          path: coverage-history.json
           key: coverage-history-${{ github.run_id }}
 
       - name: Upload Coverage results
